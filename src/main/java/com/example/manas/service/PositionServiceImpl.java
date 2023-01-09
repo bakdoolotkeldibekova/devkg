@@ -21,4 +21,29 @@ public class PositionServiceImpl implements PositionService {
     public Position save(Position position) {
         return positionRepository.save(position);
     }
+
+    @Override
+    public List<Position> getAllByType(String type) {
+        return positionRepository.findAllByType(type);
+    }
+
+    @Override
+    public List<Position> getAllByUrl(String url) {
+        return positionRepository.findAllByUrl(url);
+    }
+
+    @Override
+    public List<Position> getAllByCompany(String company) {
+        return positionRepository.findAllByCompany(company);
+    }
+
+    @Override
+    public List<Position> getAllByLocation(String location) {
+        return positionRepository.findAllByLocation(location);
+    }
+
+    @Override
+    public List<Position> getAllByTitle(String title) {
+        return positionRepository.findAllByTitle(title);
+    }
 }

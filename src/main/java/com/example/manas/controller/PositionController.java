@@ -8,10 +8,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.util.List;
@@ -69,6 +66,32 @@ public class PositionController {
     public List<Position> getAll(){
         return positionService.getAll();
     }
+
+    @GetMapping("/getAllByType/{type}")
+    public List<Position> getAllByType(@PathVariable String type){
+        return positionService.getAllByType(type);
+    }
+
+    @GetMapping("/getAllByUrl/{url}")
+    public List<Position> getAllByUrl(@PathVariable String url){
+        return positionService.getAllByUrl(url);
+    }
+
+    @GetMapping("/getAllByCompany/{company}")
+    public List<Position> getAllByCompany(@PathVariable String company){
+        return positionService.getAllByCompany(company);
+    }
+
+    @GetMapping("/getAllByLocation/{location}")
+    public List<Position> getAllByLocation(@PathVariable String location){
+        return positionService.getAllByLocation(location);
+    }
+
+    @GetMapping("/getAllByTitle/{title}")
+    public List<Position> getAllByTitle(@PathVariable String title){
+        return positionService.getAllByTitle(title);
+    }
+
 
     public static String convertToEmail(String hex) {
 
